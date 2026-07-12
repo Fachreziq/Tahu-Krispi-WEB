@@ -1,0 +1,973 @@
+/* ==========================================
+   TAHU KRISPI STORE
+   FINAL CSS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#f8f9fa;
+
+    color:#333;
+
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar{
+
+    padding:18px 0;
+
+}
+
+.navbar-brand{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.nav-link{
+
+    font-weight:500;
+
+    margin:0 10px;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#ff9800 !important;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero-section{
+
+    padding:70px 0;
+
+}
+
+.hero-section h1{
+
+    font-size:55px;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+}
+
+.hero-section p{
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+.hero-image{
+
+    width:100%;
+
+    max-width:500px;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn-warning{
+
+    background:#ff9800;
+
+    border:none;
+
+}
+
+.btn-warning:hover{
+
+    background:#fb8c00;
+
+    transform:translateY(-2px);
+
+}
+
+.btn-outline-warning:hover{
+
+    color:white;
+
+}
+
+/* ===========================
+   SEARCH
+=========================== */
+
+.input-group{
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.input-group-text{
+
+    border:none;
+
+    background:white;
+
+}
+
+.form-control{
+
+    border:none;
+
+    padding:15px;
+
+}
+
+.form-control:focus{
+
+    box-shadow:none;
+
+}
+
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+section h2{
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   PRODUCT CARD
+=========================== */
+
+.product-card{
+
+    transition:.35s;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.product-image{
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+.card-body{
+
+    padding:20px;
+
+}
+
+.card-title{
+
+    font-weight:700;
+
+}
+
+.card-footer{
+
+    padding:20px;
+
+}
+
+/* ===========================
+   PRICE
+=========================== */
+
+.text-warning{
+
+    color:#ff9800 !important;
+
+}
+
+/* ===========================
+   BADGE
+=========================== */
+
+.badge{
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    padding:10px 18px;
+
+}
+
+/* ==========================================
+   PRODUCT CARD PREMIUM
+========================================== */
+
+.product-card{
+
+    background:#fff;
+
+    border:none;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.product-image{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.product-card:hover .product-image{
+
+    transform:scale(1.05);
+
+}
+
+.card-body{
+
+    padding:20px;
+
+}
+
+.card-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.card-text{
+
+    color:#777;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+.card-footer{
+
+    background:white;
+
+    border:none;
+
+    padding:20px;
+
+}
+
+/* ===========================
+   PRICE
+=========================== */
+
+.price{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#ff9800;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn{
+
+    transition:.3s;
+
+}
+
+.btn-warning{
+
+    color:white;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    padding:12px;
+
+}
+
+.btn-warning:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-outline-warning{
+
+    border-radius:50px;
+
+    padding:12px;
+
+}
+
+/* ===========================
+   DETAIL PRODUCT
+=========================== */
+
+.detail-image{
+
+    width:100%;
+
+    border-radius:25px;
+
+    object-fit:cover;
+
+}
+
+.detail-title{
+
+    font-size:40px;
+
+    font-weight:700;
+
+}
+
+.detail-price{
+
+    font-size:34px;
+
+    color:#ff9800;
+
+    font-weight:700;
+
+}
+
+.detail-description{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+/* ===========================
+   QUANTITY
+=========================== */
+
+.quantity-box{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.quantity-box button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    background:#ff9800;
+
+    color:white;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+}
+
+.quantity-box input{
+
+    width:70px;
+
+    text-align:center;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+}
+
+/* ===========================
+   CHECKOUT
+=========================== */
+
+.checkout-card{
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.checkout-title{
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-control{
+
+    border-radius:15px;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+}
+
+.form-control:focus{
+
+    border-color:#ff9800;
+
+    box-shadow:none;
+
+}
+
+/* ===========================
+   SUCCESS PAGE
+=========================== */
+
+.success-box{
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
+
+.success-icon{
+
+    font-size:90px;
+
+    color:#28a745;
+
+}
+
+.success-box h1{
+
+    margin-top:25px;
+
+    font-weight:700;
+
+}
+
+.success-box p{
+
+    color:#777;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:80px;
+
+}
+
+footer h5{
+
+    font-weight:700;
+
+}
+
+footer p{
+
+    opacity:.8;
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media (max-width: 992px){
+
+.hero-section{
+
+padding:50px 0;
+
+text-align:center;
+
+}
+
+.hero-section h1{
+
+font-size:42px;
+
+}
+
+.hero-image{
+
+margin-top:40px;
+
+max-width:380px;
+
+}
+
+.navbar-nav{
+
+text-align:center;
+
+margin-top:15px;
+
+}
+
+.product-card{
+
+margin-bottom:25px;
+
+}
+
+.detail-title{
+
+font-size:32px;
+
+}
+
+.detail-price{
+
+font-size:28px;
+
+}
+
+.checkout-card{
+
+padding:25px;
+
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+.container{
+
+padding-left:18px;
+
+padding-right:18px;
+
+}
+
+.navbar{
+
+padding:15px 0;
+
+}
+
+.navbar-brand{
+
+font-size:22px;
+
+}
+
+.hero-section{
+
+padding:35px 0;
+
+}
+
+.hero-section h1{
+
+font-size:34px;
+
+}
+
+.hero-section p{
+
+font-size:15px;
+
+}
+
+.hero-image{
+
+max-width:280px;
+
+margin:auto;
+
+display:block;
+
+}
+
+.product-image{
+
+height:210px;
+
+}
+
+.card-title{
+
+font-size:20px;
+
+}
+
+.price{
+
+font-size:22px;
+
+}
+
+.detail-title{
+
+font-size:28px;
+
+margin-top:20px;
+
+}
+
+.detail-price{
+
+font-size:26px;
+
+}
+
+.detail-description{
+
+font-size:15px;
+
+}
+
+.quantity-box{
+
+justify-content:center;
+
+}
+
+.checkout-card{
+
+padding:20px;
+
+}
+
+.checkout-title{
+
+font-size:28px;
+
+}
+
+.success-box{
+
+padding:35px 20px;
+
+}
+
+.success-icon{
+
+font-size:70px;
+
+}
+
+footer{
+
+text-align:center;
+
+}
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:576px){
+
+.hero-section h1{
+
+font-size:28px;
+
+}
+
+.hero-section p{
+
+font-size:14px;
+
+}
+
+.btn{
+
+font-size:15px;
+
+padding:10px 18px;
+
+}
+
+.product-image{
+
+height:190px;
+
+}
+
+.card-body{
+
+padding:16px;
+
+}
+
+.card-footer{
+
+padding:16px;
+
+}
+
+.price{
+
+font-size:20px;
+
+}
+
+.detail-image{
+
+margin-bottom:20px;
+
+}
+
+.detail-title{
+
+font-size:24px;
+
+}
+
+.detail-price{
+
+font-size:22px;
+
+}
+
+.checkout-title{
+
+font-size:24px;
+
+}
+
+.success-box h1{
+
+font-size:28px;
+
+}
+
+}
+
+/* ==========================================
+   UTILITIES
+========================================== */
+
+.rounded-20{
+
+border-radius:20px;
+
+}
+
+.shadow-custom{
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.text-orange{
+
+color:#ff9800;
+
+}
+
+.bg-orange{
+
+background:#ff9800;
+
+color:white;
+
+}
+
+.transition{
+
+transition:.3s;
+
+}
+
+.hover-scale:hover{
+
+transform:scale(1.03);
+
+}
+
+.cursor-pointer{
+
+cursor:pointer;
+
+}
+
+.w-fit{
+
+width:fit-content;
+
+}
+
+.object-cover{
+
+object-fit:cover;
+
+}
+
+.fw-700{
+
+font-weight:700;
+
+}
+
+.fw-600{
+
+font-weight:600;
+
+}
+
+.fw-500{
+
+font-weight:500;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff9800;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#fb8c00;
+
+}

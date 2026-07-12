@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Pesanan Berhasil
+{% endblock %}
+
+{% block content %}
+
+<div class="success-page">
+
+    <div class="success-card">
+
+        <div class="check-icon">
+
+            <i class="bi bi-check-circle-fill"></i>
+
+        </div>
+
+        <h2>Pesanan Berhasil!</h2>
+
+        <p>
+            Terima kasih telah memesan di
+            <strong>Tahu Krispi</strong>.
+        </p>
+
+        <p class="small text-muted">
+            Pesanan Anda sedang diproses.
+        </p>
+
+        <a href="{{ url_for('home') }}"
+           class="btn btn-warning w-100 mt-4">
+
+            Kembali ke Home
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}
