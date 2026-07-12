@@ -14,18 +14,21 @@ import os
 app = Flask(__name__)
 app.secret_key = "tahu_krispi_secret_key"
 
+
+
 # ==========================
 # DATABASE
 # ==========================
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
+os.makedirs(os.path.join(BASE_DIR, "database"), exist_ok=True)
+
 DATABASE = os.path.join(
     BASE_DIR,
     "database",
-    "tahu_krispi.db"
+    "database.db"
 )
-
 
 def get_db():
 
@@ -34,6 +37,81 @@ def get_db():
     conn.row_factory = sqlite3.Row
 
     return conn
+
+# ==========================
+# INIT DATABASE
+# ==========================
+
+def init_db():
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Tabel Products
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS products (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        description TEXT,
+        price INTEGER NOT NULL,
+        image TEXT
+    )
+    """)
+
+    # Tabel Orders
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS orders (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        customer_name TEXT NOT NULL,
+        phone TEXT NOT NULL,
+        address TEXT NOT NULL,
+        total INTEGER NOT NULL
+    )
+    """)
+
+    # Cek apakah produk sudah ada
+    cursor.execute("SELECT COUNT(*) FROM products")
+    total = cursor.fetchone()[0]
+
+    # Isi data awal jika masih kosong
+    if total == 0:
+        cursor.executemany("""
+        INSERT INTO products
+        (name, description, price, image)
+        VALUES (?, ?, ?, ?)
+        """, [
+
+            (
+                "Tahu Krispi Original",
+                "Tahu krispi original dengan tekstur renyah dan gurih.",
+                12000,
+                "original.jpg"
+            ),
+
+            (
+                "Tahu Krispi Pedas",
+                "Tahu krispi dengan bumbu pedas.",
+                15000,
+                "pedas.jpg"
+            ),
+
+            (
+                "Tahu Krispi BBQ",
+                "Tahu krispi rasa BBQ.",
+                16000,
+                "bbq.jpg"
+            ),
+
+            (
+                "Tahu Krispi Keju",
+                "Tahu krispi taburan keju.",
+                18000,
+                "keju.jpg"
+            )
+
+        ])
+
+    conn.commit()
+    conn.close()
 
 
 # ==========================
@@ -351,9 +429,15 @@ def page_not_found(error):
 
 
 # ==========================
+# INIT DATABASE
+# ==========================
+
+with app.app_context():
+    init_db()
+
+# ==========================
 # RUN APP
 # ==========================
 
 if __name__ == "__main__":
-
     app.run(debug=True)
