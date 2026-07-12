@@ -23,7 +23,7 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASE = os.path.join(
     BASE_DIR,
     "database",
-    "database.db"
+    "tahu_krispi.db"
 )
 
 
@@ -356,8 +356,6 @@ def not_found(error):
 # ==========================
 # RUN APP
 # ==========================
-app = Flask(__name__)
-app.config["SECRET_KEY"] = "tahukrispi123"
 
 if __name__ == "__main__":
 
