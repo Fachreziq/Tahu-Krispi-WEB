@@ -356,6 +356,8 @@ def not_found(error):
 # ==========================
 # RUN APP
 # ==========================
+app = Flask(__name__)
+app.config["SECRET_KEY"] = "tahukrispi123"
 
 if __name__ == "__main__":
 
