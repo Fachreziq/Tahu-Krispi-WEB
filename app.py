@@ -115,16 +115,16 @@ def init_db():
 
         ])
 
-conn.commit()
+    conn.commit()
 
-print(
-    "Products:",
-    cursor.execute(
-        "SELECT COUNT(*) FROM products"
-    ).fetchone()[0]
-)
+    print(
+        "Products:",
+        cursor.execute(
+            "SELECT COUNT(*) FROM products"
+        ).fetchone()[0]
+    )
 
-conn.close()
+    conn.close()
 
 # ==========================
 # SESSION CART
