@@ -29,6 +29,8 @@ DATABASE = os.path.join(
     "database",
     "database.db"
 )
+print("DATABASE =", DATABASE)
+print("DATABASE EXISTS =", os.path.exists(DATABASE))
 
 def get_db():
 
@@ -43,6 +45,9 @@ def get_db():
 # ==========================
 
 def init_db():
+
+    print("========== INIT DATABASE ==========")
+
     conn = get_db()
     cursor = conn.cursor()
 
@@ -80,39 +85,46 @@ def init_db():
         VALUES (?, ?, ?, ?)
         """, [
 
-            (
-                "Tahu Krispi Original",
-                "Tahu krispi original dengan tekstur renyah dan gurih.",
-                12000,
-                "original.jpg"
-            ),
+(
+    "Tahu Krispi Original",
+    "Tahu krispi original dengan tekstur renyah dan gurih.",
+    12000,
+    "tahu1.jpg"
+),
 
-            (
-                "Tahu Krispi Pedas",
-                "Tahu krispi dengan bumbu pedas.",
-                15000,
-                "pedas.jpg"
-            ),
+(
+    "Tahu Krispi Pedas",
+    "Tahu krispi dengan bumbu pedas.",
+    15000,
+    "tahu2.jpg"
+),
 
-            (
-                "Tahu Krispi BBQ",
-                "Tahu krispi rasa BBQ.",
-                16000,
-                "bbq.jpg"
-            ),
+(
+    "Tahu Krispi BBQ",
+    "Tahu krispi rasa BBQ.",
+    16000,
+    "tahu3.jpg"
+),
 
-            (
-                "Tahu Krispi Keju",
-                "Tahu krispi taburan keju.",
-                18000,
-                "keju.jpg"
-            )
+(
+    "Tahu Krispi Keju",
+    "Tahu krispi taburan keju.",
+    18000,
+    "tahu4.jpg"
+)
 
         ])
 
-    conn.commit()
-    conn.close()
+conn.commit()
 
+print(
+    "Products:",
+    cursor.execute(
+        "SELECT COUNT(*) FROM products"
+    ).fetchone()[0]
+)
+
+conn.close()
 
 # ==========================
 # SESSION CART
@@ -419,25 +431,13 @@ def success():
     )
 
 
-# ==========================
-# 404 ERROR
-# ==========================
-
 @app.errorhandler(404)
 def page_not_found(error):
     return redirect(url_for("home"))
 
-
-# ==========================
-# INIT DATABASE
-# ==========================
-
+# Jalankan inisialisasi database
 with app.app_context():
     init_db()
-
-# ==========================
-# RUN APP
-# ==========================
 
 if __name__ == "__main__":
     app.run(debug=True)
