@@ -16,7 +16,7 @@ def init_db():
     CREATE TABLE IF NOT EXISTS products (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
-        description TEXT,
+        description TEXT NOT NULL,
         price INTEGER NOT NULL,
         image TEXT NOT NULL
     )
@@ -36,18 +36,18 @@ def init_db():
     """)
 
     # ==========================
-    # INSERT DATA PRODUK
+    # INSERT DATA AWAL
     # ==========================
     cursor.execute("SELECT COUNT(*) FROM products")
-    count = cursor.fetchone()[0]
+    total = cursor.fetchone()[0]
 
-    if count == 0:
+    if total == 0:
 
         products = [
 
             (
                 "Tahu Krispi Original",
-                "Tahu krispi original yang renyah dan gurih.",
+                "Tahu krispi original dengan tekstur renyah dan gurih.",
                 12000,
                 "tahu1.jpg"
             ),
@@ -82,13 +82,13 @@ def init_db():
         """, products)
 
     conn.commit()
-    conn.close()
 
     print("===================================")
     print("Database berhasil dibuat.")
-    print("Tabel products siap.")
-    print("Tabel orders siap.")
+    print("Products :", cursor.execute("SELECT COUNT(*) FROM products").fetchone()[0])
     print("===================================")
+
+    conn.close()
 
 
 if __name__ == "__main__":
